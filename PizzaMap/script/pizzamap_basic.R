@@ -1,6 +1,6 @@
 ##install.packages("leaflet")
 ##install.packages("sp")
-##install.packages("rgal")
+install.packages("rgal")
 
 library(leaflet)
 library(sp)

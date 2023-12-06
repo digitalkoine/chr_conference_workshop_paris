@@ -1,6 +1,6 @@
 ## install.packages("leaflet")
 ## install.packages("sp")
-## install.packages("rgdal")
+## install.packages("sf")
 ## install.packages("RColorBrewer")
 ## install.packages("leaflet.extras")
 ## install.packages("leaflet.minicharts")
@@ -12,7 +12,7 @@
 ## Call the libraries
 library(leaflet)
 library(sp)
-library(rgdal)
+library(sf)
 library(RColorBrewer)
 library(leaflet.extras)
 library(leaflet.minicharts)
@@ -27,7 +27,7 @@ library(htmltools)
 ## PART 1 - IN THIS PART THE CODE READS THE FILES AND ATTRIBUTES COLORS AND ICONS TO ELEMENTS
 
 ## Read the shapefile
-countries <- readOGR('data/shp/countries/countries-polygon.shp')
+countries <- st_read('data/shp/countries/countries-polygon.shp')
 
 ## Create the palette of colors for the shapefiles
 palette_countries <- colorNumeric(palette = "YlOrRd", domain = countries$number)
