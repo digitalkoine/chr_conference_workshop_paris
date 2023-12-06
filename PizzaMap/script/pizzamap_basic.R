@@ -1,13 +1,13 @@
 ##install.packages("leaflet")
 ##install.packages("sp")
-install.packages("rgal")
+##install.packages("sf")
 
 library(leaflet)
 library(sp)
-library(rgdal)
+library(sf)
 
 ## Load the shapefile and name it 
-countries <- readOGR('data/shp/countries/countries-polygon.shp')
+countries <- st_read('data/shp/countries/countries-polygon.shp')
 
 ## Read the csv
 data <- read.csv("data/csv/pizzamap.csv")
